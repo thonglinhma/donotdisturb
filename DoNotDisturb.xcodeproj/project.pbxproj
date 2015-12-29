@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C28179F1C32416400E1035E /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C28179D1C32416400E1035E /* Fabric.framework */; };
+		5C2817A01C32416400E1035E /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C28179E1C32416400E1035E /* Crashlytics.framework */; };
 		5CD836F21C1FFAB800221B7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD836F11C1FFAB800221B7F /* AppDelegate.swift */; };
 		5CD836F41C1FFAB800221B7F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD836F31C1FFAB800221B7F /* ViewController.swift */; };
 		5CD836F71C1FFAB800221B7F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CD836F51C1FFAB800221B7F /* Main.storyboard */; };
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5C28179D1C32416400E1035E /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		5C28179E1C32416400E1035E /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		5CD836EE1C1FFAB800221B7F /* DoNotDisturb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoNotDisturb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CD836F11C1FFAB800221B7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CD836F31C1FFAB800221B7F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +58,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C2817A01C32416400E1035E /* Crashlytics.framework in Frameworks */,
+				5C28179F1C32416400E1035E /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +83,8 @@
 		5CD836E51C1FFAB800221B7F = {
 			isa = PBXGroup;
 			children = (
+				5C28179D1C32416400E1035E /* Fabric.framework */,
+				5C28179E1C32416400E1035E /* Crashlytics.framework */,
 				5CD836F01C1FFAB800221B7F /* DoNotDisturb */,
 				5CD837051C1FFAB800221B7F /* DoNotDisturbTests */,
 				5CD837101C1FFAB800221B7F /* DoNotDisturbUITests */,
@@ -135,6 +143,7 @@
 				5CD836EA1C1FFAB800221B7F /* Sources */,
 				5CD836EB1C1FFAB800221B7F /* Frameworks */,
 				5CD836EC1C1FFAB800221B7F /* Resources */,
+				5C28179C1C32414700E1035E /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -251,6 +260,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5C28179C1C32414700E1035E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 08f2511d688422eed27e3aaa2b43bcba617ece78 49a814fa589134e8a783d45908bdc41bc4567da6e02d0c6414df6857ca00640b";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5CD836EA1C1FFAB800221B7F /* Sources */ = {
@@ -401,6 +426,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = DoNotDisturb/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tribalddb.donotdisturb;
@@ -413,7 +442,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Tribal DDB, Singapore (4ZFXTX3K62)";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Distribution: Tribal DDB, Singapore (4ZFXTX3K62)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = DoNotDisturb/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tribalddb.donotdisturb;
